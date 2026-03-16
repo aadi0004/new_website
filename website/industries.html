@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Industries We Serve | QuantumAI Solutions</title>
+    <meta name="description"
+        content="QuantumAI serves Healthcare, Education, Financial Services, Manufacturing, Real Estate, and SMEs with custom AI solutions tailored to industry-specific challenges." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .page-hero {
+            padding: calc(var(--nav-h) + 5rem) 0 4rem;
+            text-align: center;
+        }
+
+        .page-hero p {
+            color: var(--text-2);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .industry-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            padding: 2rem 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media(max-width:600px) {
+            .industry-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        .ind-icon-big {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .industry-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: .5rem;
+        }
+
+        .industry-card p {
+            color: var(--text-2);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .ind-solutions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .4rem;
+        }
+
+        .ind-sol {
+            padding: .25rem .7rem;
+            background: rgba(255, 255, 255, .05);
+            border: 1px solid rgba(255, 255, 255, .08);
+            border-radius: 6px;
+            font-size: .78rem;
+            color: var(--text-3);
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body data-page="industries">
+    <canvas id="bg-canvas"></canvas>
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label reveal">Who We Serve</div>
+                <h1 class="reveal delay-1" style="font-size:clamp(2.2rem,5vw,3.5rem)">Industries We <span
+                        class="gradient-text">Empower</span></h1>
+                <p class="reveal delay-2">We adapt AI solutions to industry-specific operational challenges — not
+                    generic one-size-fits-all products.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(239,68,68,.1)"><i class="fa-solid fa-hospital"
+                            style="color:#ef4444"></i></div>
+                    <div>
+                        <h3>Healthcare & Hospitals</h3>
+                        <p>AI systems reduce administrative burden on clinical staff. Automated patient query
+                            resolution, appointment scheduling via Voice AI Agent, clinical documentation support, and
+                            intelligent triage workflows free up healthcare professionals to focus on patient care.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">Patient Query Bots</span><span class="ind-sol">Appointment Booking
+                                (Voice AI)</span><span class="ind-sol">Clinical Documentation</span><span
+                                class="ind-sol">Triage Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(99,102,241,.1)"><i class="fa-solid fa-school"
+                            style="color:#6366f1"></i></div>
+                    <div>
+                        <h3>Education & Institutions</h3>
+                        <p>Academic institutions leverage EduAssist AI for student support, knowledge retrieval from
+                            course materials, automated admissions workflows, and learning path personalization —
+                            reducing administrative load by 60% while improving student experience.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">EduAssist AI</span><span class="ind-sol">Student Support
+                                Bots</span><span class="ind-sol">Admissions Automation</span><span
+                                class="ind-sol">Learning Path AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(245,158,11,.1)"><i class="fa-solid fa-industry"
+                            style="color:#f59e0b"></i></div>
+                    <div>
+                        <h3>Manufacturing & Logistics</h3>
+                        <p>Predictive maintenance models, supply chain intelligence, AI-powered inventory management,
+                            and quality control automation — ensuring operational continuity and reducing downtime
+                            through early anomaly detection.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">Predictive Maintenance</span><span class="ind-sol">Supply Chain
+                                AI</span><span class="ind-sol">Inventory Optimization</span><span
+                                class="ind-sol">Quality Control</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(16,185,129,.1)"><i class="fa-solid fa-landmark"
+                            style="color:#10b981"></i></div>
+                    <div>
+                        <h3>Financial Services & Insurance</h3>
+                        <p>ClaimSense AI delivers 92%+ accurate risk assessment and claim prediction. Fraud detection,
+                            automated claim processing, and intelligent customer service agents reduce processing time
+                            while improving accuracy — directly reducing losses.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">ClaimSense AI</span><span class="ind-sol">Fraud Detection</span><span
+                                class="ind-sol">Risk Scoring</span><span class="ind-sol">Customer Service AI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(139,92,246,.1)"><i class="fa-solid fa-building"
+                            style="color:#8b5cf6"></i></div>
+                    <div>
+                        <h3>Real Estate</h3>
+                        <p>The Voice AI Calling Agent was built for real-estate lead conversion — automating outbound
+                            calls to property inquiries, qualifying leads through voice conversations, booking site
+                            visits, and sending follow-up emails. 24/7 lead coverage without a human sales team.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">VoiceAgent Pro (Lead Calls)</span><span class="ind-sol">Property
+                                Recommendation AI</span><span class="ind-sol">CRM Automation</span><span
+                                class="ind-sol">Lead Qualification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(6,182,212,.1)"><i class="fa-solid fa-rocket"
+                            style="color:#06b6d4"></i></div>
+                    <div>
+                        <h3>SMEs & Growing Enterprises</h3>
+                        <p>Affordable, scalable AI solutions that start small and grow with your business. From a basic
+                            AI chatbot for customer support to full multi-agent orchestration — we meet you where you
+                            are and scale alongside your growth.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">Customer Support Bots</span><span class="ind-sol">Workflow
+                                Automation</span><span class="ind-sol">Sales AI Agent</span><span class="ind-sol">Email
+                                Automation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card glass-card hover-glow reveal">
+                    <div class="ind-icon-big" style="background:rgba(236,72,153,.1)"><i class="fa-solid fa-users-line"
+                            style="color:#ec4899"></i></div>
+                    <div>
+                        <h3>HR & Recruitment Agencies</h3>
+                        <p>HireFlow AI automates the entire hiring funnel — resume screening (85%+ accuracy), candidate
+                            ranking, interview scheduling, and email communication — cutting recruiter workload by 90%
+                            while improving candidate quality.</p>
+                        <div class="ind-solutions">
+                            <span class="ind-sol">HireFlow AI</span><span class="ind-sol">Resume Screening</span><span
+                                class="ind-sol">Interview Scheduling (Voice)</span><span class="ind-sol">Candidate
+                                Ranking</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container text-center">
+                <h2 class="reveal">Not in the List?</h2>
+                <p class="reveal delay-1" style="margin:1rem auto 2rem">We've built AI systems for unique use cases
+                    across 10+ sectors. If you have a challenge, we'll find the AI solution.</p>
+                <div class="cta-actions reveal delay-2">
+                    <a href="book-demo.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-calendar-check"></i>
+                        Book a Strategy Call</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Tell Us Your Use Case</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="floating-cta" id="floating-cta">
+        <a href="book-demo.html" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Demo</a>
+    </div>
+    <script src="nav.js"></script>
+    <script>const cta = document.getElementById('floating-cta'); window.addEventListener('scroll', () => cta.classList.toggle('show', window.scrollY > 400), { passive: true });</script>
+</body>
+
+</html>

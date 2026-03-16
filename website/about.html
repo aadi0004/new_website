@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | QuantumAI Solutions — Enterprise AI Engineering</title>
+    <meta name="description"
+        content="QuantumAI Solutions — Enterprise AI engineering specializing in LangChain, LangGraph, RAG systems, Voice AI Agents, and multi-agent architectures." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .page-hero {
+            padding: calc(var(--nav-h) + 5rem) 0 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            color: var(--text-2);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Founder card */
+        .founder-card {
+            padding: 2.5rem;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media(max-width:700px) {
+            .founder-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--grad-brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #fff;
+            box-shadow: 0 0 40px rgba(14, 165, 233, .35);
+            flex-shrink: 0;
+        }
+
+        .founder-name {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: .25rem;
+        }
+
+        .founder-title {
+            color: var(--blue);
+            font-weight: 600;
+            margin-bottom: .75rem;
+        }
+
+        .founder-location {
+            font-size: .85rem;
+            color: var(--text-3);
+            margin-bottom: 1.25rem;
+        }
+
+        .founder-links {
+            display: flex;
+            gap: .75rem;
+            flex-wrap: wrap;
+        }
+
+        .founder-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            color: var(--text-2);
+            font-size: .85rem;
+            transition: color .2s;
+        }
+
+        .founder-links a:hover {
+            color: var(--blue);
+        }
+
+        /* Skills grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: .6rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-chip {
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .45rem .9rem;
+            background: rgba(14, 165, 233, .05);
+            border: 1px solid rgba(14, 165, 233, .12);
+            border-radius: 6px;
+            font-size: .8rem;
+            font-weight: 500;
+            color: var(--text-2);
+            transition: all .25s;
+            font-family: var(--font-mono);
+        }
+
+        .skill-chip:hover {
+            background: rgba(14, 165, 233, .1);
+            border-color: rgba(14, 165, 233, .3);
+            color: var(--blue-light);
+        }
+
+        .skill-chip i {
+            color: var(--blue);
+            font-size: .75rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .tl-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+        }
+
+        .tl-dot-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tl-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--blue);
+            box-shadow: 0 0 12px rgba(14, 165, 233, .5);
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .tl-line {
+            width: 2px;
+            flex: 1;
+            background: linear-gradient(to bottom, rgba(14, 165, 233, .3), transparent);
+            margin-top: 4px;
+        }
+
+        .tl-card {
+            padding: 1.5rem;
+            margin-bottom: .5rem;
+        }
+
+        .tl-period {
+            font-family: var(--font-mono);
+            font-size: .72rem;
+            color: var(--blue);
+            margin-bottom: .5rem;
+            letter-spacing: .05em;
+        }
+
+        .tl-company {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: .25rem;
+        }
+
+        .tl-role {
+            font-size: .9rem;
+            color: var(--text-2);
+            margin-bottom: .75rem;
+        }
+
+        .tl-bullets {
+            display: flex;
+            flex-direction: column;
+            gap: .4rem;
+        }
+
+        .tl-bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: .6rem;
+            font-size: .875rem;
+            color: var(--text-2);
+        }
+
+        .tl-bullets i {
+            color: #4ade80;
+            font-size: .75rem;
+            margin-top: .2rem;
+            flex-shrink: 0;
+        }
+
+        /* Approach cards */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        @media(max-width:900px) {
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:600px) {
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .approach-card {
+            padding: 1.75rem;
+            text-align: center;
+        }
+
+        .approach-icon {
+            font-size: 2rem;
+            margin-bottom: .75rem;
+            background: var(--grad-text);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .approach-card h4 {
+            font-size: .95rem;
+            font-weight: 700;
+            margin-bottom: .4rem;
+        }
+
+        .approach-card p {
+            font-size: .85rem;
+        }
+    </style>
+</head>
+
+<body data-page="about">
+    <canvas id="bg-canvas"></canvas>
+    <main>
+
+        <!-- ── Page Hero ──────────────────────────────────────────── -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label reveal">Who We Are</div>
+                <h1 class="reveal delay-1">The <span class="gradient-text">Engineering</span> Behind the AI</h1>
+                <p class="reveal delay-2">A one-engineer powerhouse turning complex AI research into production systems
+                    that actually work — and scale.</p>
+            </div>
+        </section>
+
+        <!-- ── Company Overview ─────────────────────────────────────── -->
+        <section class="section" aria-labelledby="founder-heading">
+            <div class="container">
+                <div class="founder-card glass-card reveal">
+                    <div class="founder-avatar"
+                        style="background:linear-gradient(135deg,#0EA5E9,#A855F7);border-radius:24px"><i
+                            class="fa-solid fa-code-branch"></i></div>
+                    <div>
+                        <div class="founder-name">Enterprise AI Engineering</div>
+                        <div class="founder-title">Building Systems That Scale</div>
+                        <p style="max-width:640px;margin-bottom:1rem;color:var(--text-2)">
+                            We are an AI engineering firm focused on building <strong>production-grade intelligent
+                                systems</strong> — not demos, not PoCs, but real systems running in production. We
+                            combine deep LLM knowledge with software engineering discipline to deliver AI that actually
+                            works at scale.
+                        </p>
+                        <p style="max-width:640px;color:var(--text-2)">
+                            Our work spans multi-agent RAG architectures, autonomous AI Calling Agents (outbound calls +
+                            appointment booking + automated follow-up emails), HR workflow automation, and predictive ML
+                            systems — all deployed in real enterprise environments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Infinite Scrolling Skills Marquee ──────────────────────── -->
+        <section class="section bg-dark2" style="overflow:hidden">
+            <div class="container" style="margin-bottom:2rem">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Technical Expertise</div>
+                    <h2 class="section-title">Our <span class="gradient-text">Tech Stack</span></h2>
+                    <p class="section-sub">Every tool listed here has been used in a production deployment.</p>
+                </div>
+            </div>
+
+            <div class="marquee-wrapper reveal delay-1">
+                <div class="marquee-track">
+                    <!-- Set 1 -->
+                    <div class="skill-chip"><i class="fa-solid fa-link"></i> LangChain</div>
+                    <div class="skill-chip"><i class="fa-solid fa-diagram-project"></i> LangGraph</div>
+                    <div class="skill-chip"><i class="fa-brands fa-openai"></i> OpenAI GPT-4</div>
+                    <div class="skill-chip"><i class="fa-solid fa-gem"></i> Gemini API</div>
+                    <div class="skill-chip"><i class="fa-solid fa-bolt"></i> Groq</div>
+                    <div class="skill-chip"><i class="fa-solid fa-layer-group"></i> RAG Pipelines</div>
+                    <div class="skill-chip"><i class="fa-solid fa-robot"></i> AI Agents</div>
+                    <div class="skill-chip"><i class="fa-solid fa-memory"></i> Vector DBs</div>
+                    <div class="skill-chip"><i class="fa-solid fa-face-smile"></i> Hugging Face</div>
+                    <div class="skill-chip"><i class="fa-solid fa-phone"></i> Voice AI Calling Agent</div>
+                    <div class="skill-chip"><i class="fa-solid fa-gears"></i> n8n Workflows</div>
+                    <div class="skill-chip"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="skill-chip"><i class="fa-solid fa-rocket"></i> FastAPI</div>
+                    <div class="skill-chip"><i class="fa-brands fa-aws"></i> AWS EC2</div>
+                    <div class="skill-chip"><i class="fa-brands fa-docker"></i> Docker</div>
+                    <div class="skill-chip"><i class="fa-brands fa-react"></i> React</div>
+                    <div class="skill-chip"><i class="fa-brands fa-node-js"></i> Node.js</div>
+                    <div class="skill-chip"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+
+                    <!-- Duplicate for infinite loop -->
+                    <div class="skill-chip"><i class="fa-solid fa-link"></i> LangChain</div>
+                    <div class="skill-chip"><i class="fa-solid fa-diagram-project"></i> LangGraph</div>
+                    <div class="skill-chip"><i class="fa-brands fa-openai"></i> OpenAI GPT-4</div>
+                    <div class="skill-chip"><i class="fa-solid fa-gem"></i> Gemini API</div>
+                    <div class="skill-chip"><i class="fa-solid fa-bolt"></i> Groq</div>
+                    <div class="skill-chip"><i class="fa-solid fa-layer-group"></i> RAG Pipelines</div>
+                    <div class="skill-chip"><i class="fa-solid fa-robot"></i> AI Agents</div>
+                    <div class="skill-chip"><i class="fa-solid fa-memory"></i> Vector DBs</div>
+                    <div class="skill-chip"><i class="fa-solid fa-face-smile"></i> Hugging Face</div>
+                    <div class="skill-chip"><i class="fa-solid fa-phone"></i> Voice AI Calling Agent</div>
+                    <div class="skill-chip"><i class="fa-solid fa-gears"></i> n8n Workflows</div>
+                    <div class="skill-chip"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="skill-chip"><i class="fa-solid fa-rocket"></i> FastAPI</div>
+                    <div class="skill-chip"><i class="fa-brands fa-aws"></i> AWS EC2</div>
+                    <div class="skill-chip"><i class="fa-brands fa-docker"></i> Docker</div>
+                    <div class="skill-chip"><i class="fa-brands fa-react"></i> React</div>
+                    <div class="skill-chip"><i class="fa-brands fa-node-js"></i> Node.js</div>
+                    <div class="skill-chip"><i class="fa-solid fa-database"></i> PostgreSQL</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Experience Timeline ────────────────────────────────── -->
+        <section class="section" aria-labelledby="exp-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Work History</div>
+                    <h2 class="section-title" id="exp-heading">Production <span class="gradient-text">Experience</span>
+                    </h2>
+                    <p class="section-sub">Real systems, real deployments, real impact — not just theory.</p>
+                </div>
+
+                <div class="timeline reveal">
+                    <!-- Telepathy Infotech -->
+                    <div class="tl-item">
+                        <div class="tl-dot-col">
+                            <div class="tl-dot"></div>
+                            <div class="tl-line"></div>
+                        </div>
+                        <div>
+                            <div class="tl-card glass-card">
+                                <div class="tl-period"><i class="fa-solid fa-calendar"></i> Jul 2024 — Present</div>
+                                <div class="tl-company">Telepathy Infotech</div>
+                                <div class="tl-role">AI / ML Engineer</div>
+                                <ul class="tl-bullets">
+                                    <li><i class="fa-solid fa-check-circle"></i>Built production-grade AI chatbot with
+                                        multi-agent architecture, memory layers, and RAG for enterprise knowledge
+                                        retrieval</li>
+                                    <li><i class="fa-solid fa-check-circle"></i><strong>Developed AI Calling
+                                            Agent</strong> for real-estate lead conversion — automated outbound calls,
+                                        intelligent voice interactions, appointment booking, and automated email
+                                        follow-ups</li>
+                                    <li><i class="fa-solid fa-check-circle"></i>Designed Role-Based Access Control
+                                        (RBAC) for multi-tenant SaaS chatbot platform</li>
+                                    <li><i class="fa-solid fa-check-circle"></i>Optimized LangChain workflows with
+                                        prompt caching, reducing latency by 40%</li>
+                                    <li><i class="fa-solid fa-check-circle"></i>Increased user engagement by 60% through
+                                        advanced conversational AI features</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regex Software -->
+                    <div class="tl-item">
+                        <div class="tl-dot-col">
+                            <div class="tl-dot" style="background:var(--purple)"></div>
+                            <div class="tl-line"></div>
+                        </div>
+                        <div>
+                            <div class="tl-card glass-card">
+                                <div class="tl-period"><i class="fa-solid fa-calendar"></i> 2023 — 2024</div>
+                                <div class="tl-company">Regex Software Services</div>
+                                <div class="tl-role">AI/ML & Gen AI Intern</div>
+                                <ul class="tl-bullets">
+                                    <li><i class="fa-solid fa-check-circle"></i>Built AI-powered Applicant Tracking
+                                        System (ATS) using Gemini API with <strong>85%+ accuracy</strong> in candidate
+                                        screening</li>
+                                    <li><i class="fa-solid fa-check-circle"></i>Automated HR workflows using Google
+                                        Forms, Zapier, and Gmail API — reducing manual HR tasks by <strong>90%</strong>
+                                    </li>
+                                    <li><i class="fa-solid fa-check-circle"></i>Automated appointment scheduling and
+                                        candidate communication pipelines</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Projects ───────────────────────────────────────────── -->
+        <section class="section bg-dark2" aria-labelledby="projects-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Featured Projects</div>
+                    <h2 class="section-title" id="projects-heading">What I've <span class="gradient-text">Built</span>
+                    </h2>
+                </div>
+                <div class="solutions-grid">
+                    <article class="sol-card glass-card hover-glow reveal">
+                        <div class="sol-icon-wrap" style="--clr:#0EA5E9"><i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h3>Student Helper AI</h3>
+                        <p>AI-driven ATS with custom learning path suggestions, deployed on AWS EC2. RAG-powered
+                            academic assistant for institutional knowledge retrieval.</p>
+                        <ul class="sol-features">
+                            <li><i class="fa-solid fa-check-circle"></i>Deployed on AWS EC2</li>
+                            <li><i class="fa-solid fa-check-circle"></i>LangChain RAG pipeline</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Gemini API integration</li>
+                        </ul>
+                    </article>
+                    <article class="sol-card glass-card hover-glow reveal delay-1">
+                        <div class="sol-icon-wrap" style="--clr:#A855F7"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Insurance Claim Prediction</h3>
+                        <p>ML classification system achieving 92% accuracy on 5,000+ insurance records using ensemble
+                            learning.</p>
+                        <ul class="sol-features">
+                            <li><i class="fa-solid fa-check-circle"></i>92% model accuracy</li>
+                            <li><i class="fa-solid fa-check-circle"></i>RandomForest + XGBoost</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Real dataset (5000+ records)</li>
+                        </ul>
+                    </article>
+                    <article class="sol-card glass-card hover-glow reveal delay-2">
+                        <div class="sol-icon-wrap" style="--clr:#14B8A6"><i class="fa-solid fa-users-viewfinder"></i>
+                        </div>
+                        <h3>RecruitEase</h3>
+                        <p>Automated applicant tracking workflow using Zapier and Gmail APIs — eliminated manual HR
+                            coordination entirely.</p>
+                        <ul class="sol-features">
+                            <li><i class="fa-solid fa-check-circle"></i>Zapier + Gmail API</li>
+                            <li><i class="fa-solid fa-check-circle"></i>90% task automation</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Automated candidate emails</li>
+                        </ul>
+                    </article>
+                    <article class="sol-card glass-card hover-glow reveal delay-3"
+                        style="border-color:rgba(14,165,233,.2)">
+                        <div class="sol-icon-wrap" style="--clr:#0EA5E9"><i class="fa-solid fa-phone-volume"></i></div>
+                        <h3>AI Calling Agent (Telepathy)</h3>
+                        <p>Production Voice AI agent for real-estate lead conversion — automated outbound calls, voice
+                            interactions, appointment scheduling, email follow-ups.</p>
+                        <ul class="sol-features">
+                            <li><i class="fa-solid fa-check-circle"></i>Automated outbound calls</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Voice appointment booking</li>
+                            <li><i class="fa-solid fa-check-circle"></i>Automated email notifications</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Approach ───────────────────────────────────────────── -->
+        <section class="section" aria-label="Our Approach">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Our Approach</div>
+                    <h2 class="section-title">Engineering <span class="gradient-text">Philosophy</span></h2>
+                </div>
+                <div class="approach-grid">
+                    <div class="approach-card glass-card hover-glow reveal">
+                        <div class="approach-icon"><i class="fa-solid fa-cubes-stacked"></i></div>
+                        <h4>Production-First</h4>
+                        <p>Every system is designed for production load, not demos. Enterprise security, observability,
+                            and reliability from day 1.</p>
+                    </div>
+                    <div class="approach-card glass-card hover-glow reveal delay-1">
+                        <div class="approach-icon"><i class="fa-solid fa-brain"></i></div>
+                        <h4>Research-Informed</h4>
+                        <p>Keep up with the latest LLM research and translate cutting-edge techniques into practical
+                            engineering solutions.</p>
+                    </div>
+                    <div class="approach-card glass-card hover-glow reveal delay-2">
+                        <div class="approach-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4>Metrics-Driven</h4>
+                        <p>Every AI system has measurable KPIs — accuracy, latency, cost per query. No vague "AI magic"
+                            — real numbers.</p>
+                    </div>
+                    <div class="approach-card glass-card hover-glow reveal delay-3">
+                        <div class="approach-icon"><i class="fa-solid fa-lock"></i></div>
+                        <h4>Security-Aware</h4>
+                        <p>RBAC, data isolation, and on-premise options built in — not bolted-on later.</p>
+                    </div>
+                    <div class="approach-card glass-card hover-glow reveal">
+                        <div class="approach-icon"><i class="fa-solid fa-infinity"></i></div>
+                        <h4>Long-term Partner</h4>
+                        <p>Deployment is the beginning — not the end. Ongoing monitoring, retraining, and feature
+                            expansion included.</p>
+                    </div>
+                    <div class="approach-card glass-card hover-glow reveal delay-1">
+                        <div class="approach-icon"><i class="fa-solid fa-handshake"></i></div>
+                        <h4>Business-Aligned</h4>
+                        <p>AI systems designed around your KPIs — not the latest trending model. Business impact over
+                            technical novelty.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA ────────────────────────────────────────────────── -->
+        <section class="cta-banner">
+            <div class="container text-center">
+                <h2 class="reveal">Want to Work Together?</h2>
+                <p class="reveal delay-1" style="margin:1rem auto 2rem">Let's discuss your AI automation challenge and
+                    map out a solution.</p>
+                <div class="cta-actions reveal delay-2">
+                    <a href="book-demo.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-calendar-check"></i>
+                        Book a Call</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Send a Message</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-cta" id="floating-cta">
+        <a href="book-demo.html" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Demo</a>
+    </div>
+
+    <script src="nav.js"></script>
+    <script>
+        const cta = document.getElementById('floating-cta');
+        window.addEventListener('scroll', () => cta.classList.toggle('show', window.scrollY > 400), { passive: true });
+    </script>
+</body>
+
+</html>

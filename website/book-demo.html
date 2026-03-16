@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Demo | QuantumAI Solutions — Free AI Strategy Call</title>
+    <meta name="description"
+        content="Book a free 30-minute AI strategy call with QuantumAI Solutions. Discuss your AI automation project, Voice AI Calling Agent, RAG systems, or custom ML engineering needs." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .page-hero {
+            padding: calc(var(--nav-h) + 4rem) 0 3.5rem;
+            text-align: center;
+        }
+
+        .page-hero p {
+            color: var(--text-2);
+            max-width: 550px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2.5rem;
+            align-items: start;
+        }
+
+        @media(max-width:900px) {
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .benefits-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: rgba(14, 165, 233, .04);
+            border: 1px solid rgba(14, 165, 233, .1);
+            border-radius: 12px;
+        }
+
+        .benefit-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 9px;
+            background: var(--grad-brand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: .9rem;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .benefit-item h5 {
+            font-size: .9rem;
+            font-weight: 700;
+            margin-bottom: .15rem;
+        }
+
+        .benefit-item p {
+            font-size: .82rem;
+            color: var(--text-2);
+        }
+
+        .products-pick {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .6rem;
+            margin-bottom: .25rem;
+        }
+
+        .product-pick {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .65rem 1rem;
+            background: rgba(255, 255, 255, .04);
+            border: 1.5px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .2s;
+            font-size: .85rem;
+        }
+
+        .product-pick input {
+            accent-color: var(--blue);
+        }
+
+        .product-pick:has(input:checked) {
+            border-color: rgba(14, 165, 233, .5);
+            background: rgba(14, 165, 233, .08);
+        }
+
+        .product-pick i {
+            color: var(--blue);
+        }
+
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .5rem;
+        }
+
+        .slot-btn {
+            padding: .55rem;
+            background: rgba(255, 255, 255, .04);
+            border: 1.5px solid rgba(255, 255, 255, .08);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            font-size: .8rem;
+            font-family: var(--font-mono);
+            transition: all .2s;
+            color: var(--text-2);
+        }
+
+        .slot-btn:hover {
+            border-color: rgba(14, 165, 233, .4);
+            color: var(--blue);
+        }
+
+        .slot-btn.selected {
+            border-color: var(--blue);
+            background: rgba(14, 165, 233, .1);
+            color: var(--blue);
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body data-page="demo">
+    <canvas id="bg-canvas"></canvas>
+    <main>
+
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label reveal">Free Strategy Call</div>
+                <h1 class="reveal delay-1" style="font-size:clamp(2rem,4.5vw,3.2rem)">Book Your <span
+                        class="gradient-text">AI Demo</span></h1>
+                <p class="reveal delay-2">30 minutes. No sales pitch. Just a real conversation about your AI needs and
+                    which systems will give you the highest ROI.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="book-grid">
+
+                    <!-- Benefits -->
+                    <div class="reveal">
+                        <h3 style="margin-bottom:1.5rem">What to Expect</h3>
+                        <div class="benefits-list">
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                                <div>
+                                    <h5>Free AI Opportunity Audit</h5>
+                                    <p>We'll identify where AI automation can have the biggest impact on your business —
+                                        specific use cases, not generic advice.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                                <div>
+                                    <h5>Live Voice Agent Demo</h5>
+                                    <p>See our Voice AI Calling Agent make a real demo call — outbound call flow, voice
+                                        conversation, and automatic appointment booking.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-file-lines"></i></div>
+                                <div>
+                                    <h5>Custom Architecture Brief</h5>
+                                    <p>Leave with a clear picture of what your AI system would look like technically —
+                                        stack, integrations, timeline, and cost estimate.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-handshake"></i></div>
+                                <div>
+                                    <h5>No Commitment Required</h5>
+                                    <p>This is a technical discovery call — not a high-pressure sales call. Walk away
+                                        with value regardless of whether we work together.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            style="margin-top:1.75rem;padding:1.25rem;background:rgba(168,85,247,.06);border:1px solid rgba(168,85,247,.18);border-radius:12px">
+                            <div
+                                style="font-size:.8rem;color:var(--purple-light);font-family:var(--font-mono);margin-bottom:.5rem">
+                                EXPERT GUIDANCE</div>
+                            <div style="font-weight:700">Enterprise AI Engineering</div>
+                            <div style="font-size:.85rem;color:var(--text-2)">San Francisco, CA</div>
+                            <div style="font-size:.82rem;color:var(--text-3);margin-top:.5rem">Our engineers build
+                                production systems that process millions of interactions — serving real-estate lead
+                                conversion and enterprise workflows at scale.</div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="glass-card reveal delay-1" style="padding:2.5rem">
+                        <h3 style="margin-bottom:.375rem">Book Your Slot</h3>
+                        <p style="color:var(--text-2);font-size:.88rem;margin-bottom:1.75rem">Fill the form — we'll
+                            confirm your slot within 2 hours.</p>
+
+                        <form id="demo-form" novalidate>
+                            <div class="form-row two-col">
+                                <div class="form-group">
+                                    <label for="df-name">Full Name <span class="req">*</span></label>
+                                    <input type="text" id="df-name" name="name" placeholder="Your name" required
+                                        autocomplete="name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="df-email">Work Email <span class="req">*</span></label>
+                                    <input type="email" id="df-email" name="email" placeholder="your@company.com"
+                                        required autocomplete="email" />
+                                </div>
+                            </div>
+                            <div class="form-row two-col">
+                                <div class="form-group">
+                                    <label for="df-company">Company</label>
+                                    <input type="text" id="df-company" name="company" placeholder="Company name"
+                                        autocomplete="organization" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="df-phone">Phone</label>
+                                    <input type="tel" id="df-phone" name="phone" placeholder="+91 9XXXXXXXXX"
+                                        autocomplete="tel" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>What are you interested in?</label>
+                                <div class="products-pick">
+                                    <label class="product-pick"><input type="checkbox" name="interest"
+                                            value="voice_agent" /><i class="fa-solid fa-phone-volume"></i> Voice AI
+                                        Agent</label>
+                                    <label class="product-pick"><input type="checkbox" name="interest"
+                                            value="rag_assistant" /><i class="fa-solid fa-user-shield"></i> Internal AI
+                                        Assistant</label>
+                                    <label class="product-pick"><input type="checkbox" name="interest"
+                                            value="workflow_automation" /><i class="fa-solid fa-robot"></i> Workflow
+                                        Automation</label>
+                                    <label class="product-pick"><input type="checkbox" name="interest"
+                                            value="custom_ml" /><i class="fa-solid fa-chart-line"></i> Custom ML /
+                                        Analytics</label>
+                                    <label class="product-pick"><input type="checkbox" name="interest"
+                                            value="hireflow" /><i class="fa-solid fa-users-viewfinder"></i> HireFlow
+                                        AI</label>
+                                    <label class="product-pick"><input type="checkbox" name="interest"
+                                            value="other" /><i class="fa-solid fa-question-circle"></i> Other / Not
+                                        Sure</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Preferred Time Slot (IST)</label>
+                                <div class="time-slots" id="time-slots">
+                                    <div class="slot-btn" onclick="selectSlot(this,'10:00 AM IST')">10:00 AM</div>
+                                    <div class="slot-btn" onclick="selectSlot(this,'11:00 AM IST')">11:00 AM</div>
+                                    <div class="slot-btn" onclick="selectSlot(this,'12:00 PM IST')">12:00 PM</div>
+                                    <div class="slot-btn" onclick="selectSlot(this,'2:00 PM IST')">2:00 PM</div>
+                                    <div class="slot-btn" onclick="selectSlot(this,'4:00 PM IST')">4:00 PM</div>
+                                    <div class="slot-btn" onclick="selectSlot(this,'6:00 PM IST')">6:00 PM</div>
+                                </div>
+                                <input type="hidden" id="slot-value" name="interest_slot" />
+                            </div>
+
+                            <div id="demo-feedback" class="form-feedback" aria-live="polite"></div>
+                            <button type="submit" id="demo-submit" class="btn btn-primary w-full">
+                                <i class="fa-solid fa-calendar-check"></i> Confirm My Demo Slot
+                            </button>
+                            <p style="text-align:center;margin-top:1rem;font-size:.8rem;color:var(--text-3)">
+                                Or email us directly: <a href="mailto:hello@quantumai.com"
+                                    style="color:var(--blue)">hello@quantumai.com</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice Agent CTA special -->
+        <section class="section bg-dark2">
+            <div class="container" style="max-width:820px;text-align:center">
+                <div class="section-label reveal">Try It Now</div>
+                <h2 class="reveal delay-1">Want the <span class="gradient-text">AI to Call You?</span></h2>
+                <p class="reveal delay-2" style="margin:1rem auto 2.5rem;max-width:560px;color:var(--text-2)">Enter your
+                    number below and our Voice AI Agent will call you for a live 2-minute demo — experience what your
+                    customers will experience.</p>
+                <form id="call-form" class="glass-card reveal delay-2"
+                    style="display:grid;grid-template-columns:1fr auto;gap:1rem;padding:1.5rem;max-width:500px;margin:0 auto"
+                    novalidate>
+                    <input type="tel" id="call-phone" name="phone" placeholder="+91 9XXXXXXXXX — We'll call you!"
+                        required style="margin:0" />
+                    <button type="submit" id="call-submit" class="btn btn-primary"><i class="fa-solid fa-phone"></i>
+                        Call Me</button>
+                    <input type="hidden" name="name" value="Demo Prospect" />
+                    <input type="hidden" name="email" value="demo@quantumai.in" />
+                    <input type="hidden" name="purpose" value="voice_demo" />
+                </form>
+                <div id="call-feedback" class="form-feedback"
+                    style="margin-top:1rem;max-width:500px;margin-left:auto;margin-right:auto"></div>
+            </div>
+        </section>
+
+    </main>
+    <script src="nav.js"></script>
+    <script>
+        // Slot selection
+        function selectSlot(el, val) {
+            document.querySelectorAll('.slot-btn').forEach(b => b.classList.remove('selected'));
+            el.classList.add('selected');
+            document.getElementById('slot-value').value = val;
+        }
+
+        // Demo form — collect checkboxes
+        const demoForm = document.getElementById('demo-form');
+        const demoBtn = document.getElementById('demo-submit');
+        const demoFB = document.getElementById('demo-feedback');
+        if (demoForm) {
+            demoForm.addEventListener('submit', async e => {
+                e.preventDefault();
+                const interests = [...demoForm.querySelectorAll('input[name="interest"]:checked')].map(c => c.value).join(', ');
+                const slot = document.getElementById('slot-value').value;
+                const data = {
+                    name: demoForm.name.value, email: demoForm.email.value,
+                    company: demoForm.company.value, phone: demoForm.phone.value,
+                    interest: `${interests}${slot ? ' | Slot: ' + slot : ''}`
+                };
+                if (!data.name || !data.email) { showFB(demoFB, 'Please fill in all required fields.', 'error'); return; }
+                setLoading(demoBtn, true);
+                try {
+                    const res = await fetch('http://localhost:5000/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                    const resp = await res.json();
+                    showFB(demoFB, resp.message, resp.success ? 'success' : 'error');
+                    if (resp.success) demoForm.reset();
+                } catch { showFB(demoFB, '⚠️ Server offline. Please try again later.', 'error'); }
+                finally { setLoading(demoBtn, false); }
+            });
+        }
+
+        // Call-me form
+        const callForm = document.getElementById('call-form');
+        const callBtn = document.getElementById('call-submit');
+        const callFB = document.getElementById('call-feedback');
+        if (callForm) {
+            callForm.addEventListener('submit', async e => {
+                e.preventDefault();
+                const phone = document.getElementById('call-phone').value.trim();
+                if (!phone) { showFB(callFB, 'Please enter your phone number.', 'error'); return; }
+                setLoading(callBtn, true);
+                try {
+                    const res = await fetch('http://localhost:5000/api/call-agent', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'Demo Prospect', email: 'demo@quantumai.in', phone, purpose: 'voice_demo' }) });
+                    const resp = await res.json();
+                    showFB(callFB, resp.message, resp.success ? 'success' : 'error');
+                    if (resp.success) callForm.reset();
+                } catch { showFB(callFB, '⚠️ Server offline. Please try again later.', 'error'); }
+                finally { setLoading(callBtn, false); }
+            });
+        }
+    </script>
+</body>
+
+</html>

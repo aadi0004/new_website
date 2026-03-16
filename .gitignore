@@ -1,0 +1,33 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# ─── Node.js ──────────────────────────────────────────────────
+node_modules/
+*/node_modules/
+npm-debug.log*
+
+# ─── Environment Variables — NEVER COMMIT ─────────────────────
+.env
+.env.local
+.env.production
+.env.development
+backend/.env
+
+# ─── SQLite Legacy Files ────────────────────────────────────────
+*.db
+*.db-shm
+*.db-wal
+
+# ─── IDE / OS ──────────────────────────────────────────────────
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

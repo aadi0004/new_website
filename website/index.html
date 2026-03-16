@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#020817" />
+    <title>QuantumAI Solutions | Enterprise AI Engineering & Automation</title>
+    <meta name="description"
+        content="QuantumAI Solutions builds production-grade AI agents, RAG systems, multi-agent orchestration, and Voice AI Calling Agents for modern enterprises." />
+    <meta name="keywords"
+        content="AI automation, enterprise AI, RAG systems, LangChain, AI agents, voice AI, calling agent, generative AI, India" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="QuantumAI Solutions | Enterprise AI Engineering" />
+    <meta property="og:description"
+        content="Production-grade AI agents, RAG systems, Voice AI calling agents, and automation platforms." />
+    <link rel="canonical" href="https://www.quantumai.in/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body data-page="home" class="has-announce">
+
+    <!-- ═══════════════ ANNOUNCEMENT BAR ════════════════════════════ -->
+    <div class="announce-bar" id="announce-bar">
+        <i class="fa-solid fa-rocket"></i>
+        <span>ContentForge AI is now live — Generate & publish content to all platforms with AI</span>
+        <a href="platforms.html">View Update →</a>
+        <button class="announce-close" id="announce-close" aria-label="Close">✕</button>
+    </div>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <main>
+        <!-- ═════════════════════════════ HERO ═════════════════════════════ -->
+        <section id="hero" class="hero-section" aria-label="Hero">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="badge-row reveal" style="justify-content:center">
+                        <span class="badge pulse-badge"><i class="fa-solid fa-circle fa-xs"></i>&nbsp;Live in
+                            Production</span>
+                        <span class="badge badge-outline"><i class="fa-solid fa-phone-volume"
+                                style="color:#0EA5E9"></i>&nbsp;Now with Voice AI Agent</span>
+                    </div>
+
+                    <h1 class="hero-headline reveal delay-1">
+                        Engineering<br>
+                        <span class="typewriter-wrap gradient-text"><span class="typewriter"
+                                id="typewriter-text">Intelligent AI Systems</span></span><br>
+                        for Modern Businesses
+                    </h1>
+
+                    <p class="hero-subline reveal delay-2">
+                        We design and deploy <strong>production-grade AI agents</strong>, RAG systems, Voice AI Calling
+                        Agents, and automation platforms that reduce operational costs, increase efficiency, and unlock
+                        scalable growth.
+                    </p>
+
+                    <div class="hero-actions reveal delay-2">
+                        <a href="book-demo.html" class="btn btn-primary btn-lg">
+                            <i class="fa-solid fa-calendar-check"></i> Schedule Strategy Call
+                        </a>
+                        <a href="solutions.html" class="btn btn-outline btn-lg">
+                            Explore Solutions <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <p class="trust-line reveal delay-3">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Trusted for building secure, scalable, enterprise-ready AI infrastructures. Jaipur 🇮🇳 → Global
+                    </p>
+
+                    <!-- Interactive Hero Prompt (OmniDim-inspired) -->
+                    <div class="hero-prompt-wrap reveal delay-3">
+                        <div class="hero-prompt-box">
+                            <textarea
+                                placeholder="Describe your AI use case... e.g. 'I need an AI agent that qualifies leads and books appointments automatically'"></textarea>
+                            <div class="hero-prompt-footer">
+                                <span style="color:var(--text-3);font-size:.78rem"><i
+                                        class="fa-solid fa-wand-magic-sparkles"></i> AI-powered analysis</span>
+                                <a href="book-demo.html" class="btn btn-primary">Get AI Roadmap →</a>
+                            </div>
+                        </div>
+                        <div class="use-case-pills">
+                            <span class="use-case-pill">Lead Qualification</span>
+                            <span class="use-case-pill">Voice AI Agent</span>
+                            <span class="use-case-pill">RAG Knowledge Base</span>
+                            <span class="use-case-pill">HR Automation</span>
+                            <span class="use-case-pill">Content Generation</span>
+                            <span class="use-case-pill">Customer Support</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-stats-bar reveal delay-3">
+                        <div class="h-stat">
+                            <strong><span class="counter" data-target="50" data-suffix="+">0</span></strong>
+                            <span>AI Deployments</span>
+                        </div>
+                        <div class="h-stat">
+                            <strong><span class="counter" data-target="60" data-suffix="%">0%</span></strong>
+                            <span>Avg. Cost Reduction</span>
+                        </div>
+                        <div class="h-stat">
+                            <strong><span class="counter" data-target="10" data-suffix="x">0x</span></strong>
+                            <span>Efficiency Gain</span>
+                        </div>
+                        <div class="h-stat">
+                            <strong><span class="counter" data-target="99" data-suffix=".9%">0</span></strong>
+                            <span>Uptime SLA</span>
+                        </div>
+                    </div>
+
+                    <!-- Dashboard mockup -->
+                    <div class="hero-visual reveal delay-3">
+                        <div class="dashboard-card glass-card">
+                            <div class="card-topbar">
+                                <div class="dots"><span class="dot r"></span><span class="dot y"></span><span
+                                        class="dot g"></span></div>
+                                <span class="card-title-sm"><i class="fa-solid fa-circle-nodes fa-beat-fade"
+                                        style="color:#0EA5E9"></i> AI Orchestration Dashboard</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="dash-metrics">
+                                    <div class="d-metric"><span class="d-label">Calls Automated / Day</span><span
+                                            class="d-value"><span class="counter" data-target="340">0</span></span>
+                                    </div>
+                                    <div class="d-metric"><span class="d-label">Model Accuracy</span><span
+                                            class="d-value"><span class="counter" data-target="99"
+                                                data-suffix=".8%">0%</span></span></div>
+                                    <div class="d-metric"><span class="d-label">ROI</span><span class="d-value">+<span
+                                                class="counter" data-target="340" data-suffix="%">0%</span></span></div>
+                                </div>
+                                <div class="chart-container">
+                                    <div class="chart-label">Agent Performance &#8212; Last 7 Days</div>
+                                    <div class="chart-bars" id="chart-bars">
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar" style="height:55%"><span class="bar-tip">Mon</span></div>
+                                        </div>
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar" style="height:70%"><span class="bar-tip">Tue</span></div>
+                                        </div>
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar" style="height:60%"><span class="bar-tip">Wed</span></div>
+                                        </div>
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar" style="height:85%"><span class="bar-tip">Thu</span></div>
+                                        </div>
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar" style="height:75%"><span class="bar-tip">Fri</span></div>
+                                        </div>
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar active" style="height:95%"><span
+                                                    class="bar-tip">Sat</span></div>
+                                        </div>
+                                        <div class="c-bar-wrap">
+                                            <div class="c-bar" style="height:82%"><span class="bar-tip">Sun</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="agent-status-row">
+                                    <div class="a-status active-status"><i
+                                            class="fa-solid fa-circle-dot pulse-dot"></i><span>Voice Calling Agent
+                                            &#8212; Making Live Calls</span></div>
+                                    <div class="a-status"><i class="fa-solid fa-database"
+                                            style="color:#A855F7"></i><span>RAG Vector DB &#8212; Synced</span></div>
+                                    <div class="a-status"><i class="fa-solid fa-bolt"
+                                            style="color:#F59E0B"></i><span>Workflows Running:
+                                            <strong>12</strong></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-hint" aria-hidden="true">
+                <div class="scroll-mouse">
+                    <div class="scroll-wheel"></div>
+                </div>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- ═══════════════ AMBIENT ORBS ══════════════════════════════ -->
+        <div class="ambient-orbs" aria-hidden="true">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+
+        <!-- ═══════════════ TRUSTED BY — LOGO MARQUEE ═════════════════ -->
+        <section class="logo-marquee-section" aria-label="Trusted By">
+            <div class="logo-marquee-label">Trusted by forward-thinking teams</div>
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <div class="logo-item"><i class="fa-solid fa-building"></i> Telepathy Infotech</div>
+                    <div class="logo-item"><i class="fa-solid fa-code-branch"></i> Regex Software</div>
+                    <div class="logo-item"><i class="fa-solid fa-hospital"></i> HealthFirst Clinics</div>
+                    <div class="logo-item"><i class="fa-solid fa-graduation-cap"></i> EduNova Academy</div>
+                    <div class="logo-item"><i class="fa-solid fa-landmark"></i> FinSecure Capital</div>
+                    <div class="logo-item"><i class="fa-solid fa-cart-shopping"></i> RetailEdge Inc.</div>
+                    <div class="logo-item"><i class="fa-solid fa-globe"></i> GlobalOps Partners</div>
+                    <div class="logo-item"><i class="fa-solid fa-microchip"></i> NeuralWave Labs</div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="logo-item"><i class="fa-solid fa-building"></i> Telepathy Infotech</div>
+                    <div class="logo-item"><i class="fa-solid fa-code-branch"></i> Regex Software</div>
+                    <div class="logo-item"><i class="fa-solid fa-hospital"></i> HealthFirst Clinics</div>
+                    <div class="logo-item"><i class="fa-solid fa-graduation-cap"></i> EduNova Academy</div>
+                    <div class="logo-item"><i class="fa-solid fa-landmark"></i> FinSecure Capital</div>
+                    <div class="logo-item"><i class="fa-solid fa-cart-shopping"></i> RetailEdge Inc.</div>
+                    <div class="logo-item"><i class="fa-solid fa-globe"></i> GlobalOps Partners</div>
+                    <div class="logo-item"><i class="fa-solid fa-microchip"></i> NeuralWave Labs</div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════ TECH INTEGRATIONS ECOSYSTEM ════════════════ -->
+        <section class="integrations-section" aria-label="Technology Stack">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Powered By</div>
+                    <h2 class="section-title">Technology <span class="gradient-text">Ecosystem</span></h2>
+                    <p class="section-sub">We integrate with the leading AI and cloud platforms to build your solutions.
+                    </p>
+                </div>
+                <div class="integrations-grid reveal">
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#10a37f">⬡</div>
+                        <div class="integ-name">OpenAI</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#4285f4"><i class="fa-brands fa-google"></i></div>
+                        <div class="integ-name">Gemini</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#d97706">🦜</div>
+                        <div class="integ-name">LangChain</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#47a248"><i class="fa-solid fa-leaf"></i></div>
+                        <div class="integ-name">MongoDB</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#0ea5e9"><i class="fa-solid fa-database"></i></div>
+                        <div class="integ-name">Pinecone</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#ff6f00"><i class="fa-solid fa-fire"></i></div>
+                        <div class="integ-name">Firebase</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#ff9900"><i class="fa-brands fa-aws"></i></div>
+                        <div class="integ-name">AWS</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#a855f7"><i class="fa-brands fa-python"></i></div>
+                        <div class="integ-name">Python</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#339933"><i class="fa-brands fa-node-js"></i></div>
+                        <div class="integ-name">Node.js</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#61dafb"><i class="fa-brands fa-react"></i></div>
+                        <div class="integ-name">React</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#2496ed"><i class="fa-brands fa-docker"></i></div>
+                        <div class="integ-name">Docker</div>
+                    </div>
+                    <div class="integ-item">
+                        <div class="integ-icon" style="color:#e34f26"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="integ-name">FastAPI</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════ SOLUTION TEASERS ═══════════════════════ -->
+        <section class="section bg-dark2" aria-label="Solutions Overview">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">What We Build</div>
+                    <h2 class="section-title">AI Solutions That Drive Real Results</h2>
+                    <p class="section-sub">End-to-end intelligent systems — from RAG knowledge bases to autonomous
+                        phone-calling agents.</p>
+                </div>
+                <div class="solutions-grid">
+                    <article class="sol-card glass-card hover-glow tilt-card reveal">
+                        <div class="sol-icon-wrap" style="--clr:#0EA5E9"><i class="fa-solid fa-user-shield"></i></div>
+                        <div class="sol-num">01</div>
+                        <h3>Internal AI Assistants</h3>
+                        <p>Secure, RAG-powered assistants trained on your company data, policies, and SOPs.</p>
+                        <a href="solutions.html" class="btn btn-ghost btn-sm mt-3">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article class="sol-card glass-card hover-glow tilt-card reveal delay-1">
+                        <div class="sol-icon-wrap" style="--clr:#A855F7"><i class="fa-solid fa-robot"></i></div>
+                        <div class="sol-num">02</div>
+                        <h3>AI Agents & Automation</h3>
+                        <p>Autonomous AI systems that execute tasks, integrate APIs, and automate complex workflows.</p>
+                        <a href="solutions.html" class="btn btn-ghost btn-sm mt-3">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article class="sol-card glass-card hover-glow reveal delay-2"
+                        style="border-color:rgba(14,165,233,.2); background:rgba(14,165,233,.03)">
+                        <div class="sol-icon-wrap" style="--clr:#0EA5E9"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div class="sol-num">03</div>
+                        <h3>🎙️ Voice AI Calling Agent</h3>
+                        <p>Automated outbound calling system that books appointments, qualifies leads, and sends
+                            follow-up emails — all without human involvement.</p>
+                        <a href="solutions.html#voice-agent" class="btn btn-primary btn-sm mt-3">See It Live <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article class="sol-card glass-card hover-glow tilt-card reveal delay-3">
+                        <div class="sol-icon-wrap" style="--clr:#14B8A6"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="sol-num">04</div>
+                        <h3>Custom ML Engineering</h3>
+                        <p>Predictive analytics, risk scoring (92%+ accuracy), and recommendation engines built for
+                            production.</p>
+                        <a href="solutions.html" class="btn btn-ghost btn-sm mt-3">Learn More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    <article class="sol-card glass-card hover-glow tilt-card reveal delay-3"
+                        style="border-color:rgba(168,85,247,.2); background:rgba(168,85,247,.03)">
+                        <div class="sol-icon-wrap" style="--clr:#EC4899"><i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <div class="sol-num">05</div>
+                        <h3>🚀 ContentForge AI</h3>
+                        <p>Upload photo/video + hint — AI generates titles, captions, hashtags and publishes to YT,
+                            FB, IG, X, LinkedIn automatically.</p>
+                        <a href="platforms.html" class="btn btn-primary btn-sm mt-3">Explore <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <div style="text-align:center;margin-top:3rem" class="reveal">
+                    <a href="solutions.html" class="btn btn-primary btn-lg">View All Solutions <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ IMPACT METRICS ═════════════════════════ -->
+        <section class="section impact-section" aria-label="Impact">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Proven Results</div>
+                    <h2 class="section-title">Implementation Impact</h2>
+                    <p class="section-sub">Real numbers from real deployments — not theoretical promises.</p>
+                </div>
+                <div class="impact-grid">
+                    <div class="impact-card glass-card reveal">
+                        <div class="impact-num"><span class="counter" data-target="60" data-suffix="%">0%</span></div>
+                        <h4>Reduction in Query Resolution Time</h4>
+                        <p>RAG-based internal knowledge assistants cut repetitive query time by 60%.</p>
+                    </div>
+                    <div class="impact-card glass-card reveal delay-1">
+                        <div class="impact-num"><span class="counter" data-target="90" data-suffix="%">0%</span></div>
+                        <h4>HR Manual Tasks Automated</h4>
+                        <p>HireFlow AI + n8n workflows automated 90% of manual HR tasks end-to-end.</p>
+                    </div>
+                    <div class="impact-card glass-card reveal delay-2">
+                        <div class="impact-num">+<span class="counter" data-target="340" data-suffix="%">0%</span></div>
+                        <h4>Avg. Automation ROI</h4>
+                        <p>Businesses deploy AI workflow automation and see 340% return within 12 months.</p>
+                    </div>
+                    <div class="impact-card glass-card reveal delay-3">
+                        <div class="impact-num"><span class="counter" data-target="92" data-suffix="%">0%</span></div>
+                        <h4>ML Model Accuracy</h4>
+                        <p>Insurance claim prediction models achieving 92%+ accuracy on real-world datasets.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════ PROCESS FLOW ═══════════════════════════ -->
+        <section class="section" aria-label="How It Works">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">How It Works</div>
+                    <h2 class="section-title">From Concept to <span class="gradient-text">Production</span></h2>
+                    <p class="section-sub">A battle-tested process that delivers AI systems on time and on budget.</p>
+                </div>
+                <div class="process-flow">
+                    <div class="pf-step reveal">
+                        <div class="pf-num">01</div>
+                        <h4>Discover</h4>
+                        <p>We audit your workflows, data, and pain points to identify the highest-ROI AI opportunities.
+                        </p>
+                    </div>
+                    <div class="pf-step reveal delay-1">
+                        <div class="pf-num">02</div>
+                        <h4>Build</h4>
+                        <p>Our engineers design, prototype, and iterate on production-grade AI systems tailored to your
+                            stack.</p>
+                    </div>
+                    <div class="pf-step reveal delay-2">
+                        <div class="pf-num">03</div>
+                        <h4>Deploy</h4>
+                        <p>We deploy, monitor, and optimize — ensuring 99.9% uptime and continuous improvement.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════ TESTIMONIALS ═══════════════════════════ -->
+        <section class="section bg-dark2" aria-label="Testimonials">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">What Clients Say</div>
+                    <h2 class="section-title">Trusted by <span class="gradient-text">Industry Leaders</span></h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card tilt-card reveal">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-quote">Their AI Calling Agent transformed our lead conversion. We went
+                            from 12% to 38% booking rate — the system runs 24/7 and never misses a follow-up.</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">RK</div>
+                            <div>
+                                <div class="testimonial-name">Rajesh Kumar</div>
+                                <div class="testimonial-role">VP Sales, Real Estate Firm</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card tilt-card reveal delay-1">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-quote">The RAG system they built handles 90% of our internal queries
+                            automatically. Our support team's workload dropped by 60% in week one.</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">SP</div>
+                            <div>
+                                <div class="testimonial-name">Sneha Patel</div>
+                                <div class="testimonial-role">CTO, Enterprise SaaS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card tilt-card reveal delay-2">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <div class="testimonial-quote">Their HR automation system eliminated 90% of our manual screening
+                            tasks. We now process 5x more candidates with the same team size.</div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar">AM</div>
+                            <div>
+                                <div class="testimonial-name">Amit Mehta</div>
+                                <div class="testimonial-role">Head of HR, Tech Startup</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════ CASE STUDIES ═══════════════════════════ -->
+        <section class="section" aria-label="Case Studies">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Proven Results</div>
+                    <h2 class="section-title">Real-World <span class="gradient-text">Case Studies</span></h2>
+                    <p class="section-sub">Not theory — real deployments with measurable outcomes.</p>
+                </div>
+                <div class="cases-grid">
+                    <div class="case-card glass-card tilt-card reveal">
+                        <div class="case-industry"><i class="fa-solid fa-building"></i> Real Estate</div>
+                        <h4>AI Calling Agent for Lead Conversion</h4>
+                        <p>Deployed an autonomous voice agent that makes outbound calls, qualifies leads, books
+                            appointments, and sends automated email follow-ups — all without human intervention.</p>
+                        <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 340% ROI in 12 months</div>
+                    </div>
+                    <div class="case-card glass-card tilt-card reveal delay-1">
+                        <div class="case-industry"><i class="fa-solid fa-users"></i> Human Resources</div>
+                        <h4>HireFlow AI — Automated Recruitment</h4>
+                        <p>Built an AI-powered ATS achieving 85%+ screening accuracy, plus workflow automation with
+                            Zapier and Gmail API that eliminated 90% of manual HR tasks.</p>
+                        <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 90% manual task reduction
+                        </div>
+                    </div>
+                    <div class="case-card glass-card tilt-card reveal delay-2">
+                        <div class="case-industry"><i class="fa-solid fa-shield-halved"></i> Insurance</div>
+                        <h4>ClaimSense — Predictive Analytics</h4>
+                        <p>Engineered an ML classification system achieving 92%+ accuracy on 5,000+ insurance records
+                            using ensemble methods (RandomForest + XGBoost).</p>
+                        <div class="case-result"><i class="fa-solid fa-arrow-trend-up"></i> 92% prediction accuracy
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════════ PRICING / ENGAGEMENT ═══════════════════ -->
+        <section class="section bg-dark2" aria-label="Pricing">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Engagement Models</div>
+                    <h2 class="section-title">Flexible <span class="gradient-text">Pricing</span></h2>
+                    <p class="section-sub">Scale your AI capabilities at every stage of growth.</p>
+                </div>
+                <div class="pricing-grid">
+                    <div class="pricing-card glass-card tilt-card reveal">
+                        <div class="pricing-tier">Starter</div>
+                        <div class="pricing-name">AI Pilot</div>
+                        <div class="pricing-desc">Perfect for teams exploring AI for the first time with a focused use
+                            case.</div>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> Single AI solution deployment</li>
+                            <li><i class="fa-solid fa-check"></i> Up to 2 workflow automations</li>
+                            <li><i class="fa-solid fa-check"></i> 30-day support included</li>
+                            <li><i class="fa-solid fa-check"></i> Performance reporting dashboard</li>
+                        </ul>
+                        <a href="book-demo.html" class="btn btn-outline" style="width:100%;justify-content:center">Get
+                            Started</a>
+                    </div>
+                    <div class="pricing-card glass-card tilt-card featured reveal delay-1">
+                        <div class="pricing-badge">POPULAR</div>
+                        <div class="pricing-tier">Growth</div>
+                        <div class="pricing-name">AI Engine</div>
+                        <div class="pricing-desc">For businesses ready to scale AI across multiple departments.</div>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> Up to 3 AI solutions</li>
+                            <li><i class="fa-solid fa-check"></i> Voice AI Calling Agent included</li>
+                            <li><i class="fa-solid fa-check"></i> Multi-agent orchestration</li>
+                            <li><i class="fa-solid fa-check"></i> 90-day support + optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Priority Slack/Email support</li>
+                        </ul>
+                        <a href="book-demo.html" class="btn btn-primary" style="width:100%;justify-content:center"><i
+                                class="fa-solid fa-rocket"></i> Book Strategy Call</a>
+                    </div>
+                    <div class="pricing-card glass-card tilt-card reveal delay-2">
+                        <div class="pricing-tier">Enterprise</div>
+                        <div class="pricing-name">AI Ecosystem</div>
+                        <div class="pricing-desc">Full-scale AI transformation with dedicated engineering support.</div>
+                        <ul class="pricing-features">
+                            <li><i class="fa-solid fa-check"></i> Unlimited AI solutions</li>
+                            <li><i class="fa-solid fa-check"></i> Custom LLM fine-tuning</li>
+                            <li><i class="fa-solid fa-check"></i> On-premise deployment option</li>
+                            <li><i class="fa-solid fa-check"></i> 24/7 dedicated support team</li>
+                            <li><i class="fa-solid fa-check"></i> SLA with 99.9% uptime guarantee</li>
+                        </ul>
+                        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center">Contact
+                            Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════ FEATURE COMPARISON TABLE ═══════════════════ -->
+        <section class="comparison-section" aria-label="Feature Comparison">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">Compare Plans</div>
+                    <h2 class="section-title">Feature <span class="gradient-text">Comparison</span></h2>
+                    <p class="section-sub">See exactly what's included in each engagement tier.</p>
+                </div>
+                <table class="comparison-table glass-card reveal">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Starter</th>
+                            <th class="ct-highlight">Growth</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI Solutions</td>
+                            <td class="ct-val">1</td>
+                            <td class="ct-highlight ct-val">Up to 3</td>
+                            <td class="ct-val">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td>Voice AI Calling Agent</td>
+                            <td><span class="ct-no">✕</span></td>
+                            <td class="ct-highlight"><span class="ct-yes">✓</span></td>
+                            <td><span class="ct-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>RAG Knowledge Base</td>
+                            <td><span class="ct-yes">✓</span></td>
+                            <td class="ct-highlight"><span class="ct-yes">✓</span></td>
+                            <td><span class="ct-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>ContentForge AI</td>
+                            <td><span class="ct-no">✕</span></td>
+                            <td class="ct-highlight"><span class="ct-yes">✓</span></td>
+                            <td><span class="ct-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Multi-Agent Orchestration</td>
+                            <td><span class="ct-no">✕</span></td>
+                            <td class="ct-highlight"><span class="ct-yes">✓</span></td>
+                            <td><span class="ct-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Custom LLM Fine-tuning</td>
+                            <td><span class="ct-no">✕</span></td>
+                            <td class="ct-highlight"><span class="ct-no">✕</span></td>
+                            <td><span class="ct-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>On-Premise Deployment</td>
+                            <td><span class="ct-no">✕</span></td>
+                            <td class="ct-highlight"><span class="ct-no">✕</span></td>
+                            <td><span class="ct-yes">✓</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dedicated Support</td>
+                            <td class="ct-val">Email</td>
+                            <td class="ct-highlight ct-val">Email + Chat</td>
+                            <td class="ct-val">24/7 Team</td>
+                        </tr>
+                        <tr>
+                            <td>SLA Uptime Guarantee</td>
+                            <td class="ct-val">99%</td>
+                            <td class="ct-highlight ct-val">99.5%</td>
+                            <td class="ct-val">99.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- ═══════════════ FAQ ACCORDION ══════════════════════════════ -->
+        <section class="faq-section" aria-label="Frequently Asked Questions">
+            <div class="container">
+                <div class="section-header text-center reveal">
+                    <div class="section-label">FAQ</div>
+                    <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item reveal">
+                        <div class="faq-q">What kind of AI systems does QuantumAI build? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-a">
+                            <p>We design and ship 5 core AI systems: <strong>RAG-powered Knowledge Bases</strong>
+                                (connect your internal docs to an AI that answers employee and customer queries
+                                instantly), <strong>AI Agents & Automation</strong> (end-to-end workflows using
+                                LangChain + tool-calling agents), <strong>Voice AI Calling Agents</strong> (autonomous
+                                outbound calling, lead qualification, and appointment booking), <strong>ContentForge
+                                    AI</strong> (upload media → AI writes titles, captions, and hashtags and posts to
+                                YouTube, Instagram, Twitter, LinkedIn, Facebook simultaneously), and <strong>Custom ML
+                                    Engineering</strong> (predictive models, recommendation engines, and analytics
+                                pipelines tailored to your data).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-q">How long does it take to deploy an AI solution? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-a">
+                            <p>Timelines depend on the project tier: <strong>Pilot (Starter)</strong> — a single focused
+                                AI agent (e.g., internal FAQ bot, lead capture agent) goes live in <strong>2–4
+                                    weeks</strong>. <strong>Growth</strong> — a multi-agent system with integrations
+                                (CRM, WhatsApp, calendar) takes <strong>4–8 weeks</strong>. <strong>Enterprise</strong>
+                                — full-scale transformation with custom ML models, on-premise deployment, and team
+                                training is scoped individually. We always begin with a 30-minute free strategy call to
+                                give you an accurate quote.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-q">What technologies and LLMs do you work with? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-a">
+                            <p>We're model-agnostic. Our preferred stack: <strong>LLMs</strong> — OpenAI GPT-4o, Google
+                                Gemini 1.5 Pro, Anthropic Claude 3, and open-source models (Llama 3, Mistral) for
+                                cost-efficient deployments. <strong>RAG & Memory</strong> — Pinecone, ChromaDB, FAISS,
+                                MongoDB Atlas Vector Search. <strong>Orchestration</strong> — LangChain, LangGraph,
+                                CrewAI. <strong>Backend</strong> — FastAPI, Node.js/Express. <strong>Frontend</strong> —
+                                React, Next.js. <strong>Infra</strong> — AWS, GCP, Azure, Docker, Vercel. We select the
+                                right stack based on your performance, cost, and data-privacy requirements.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-q">How does the Voice AI Calling Agent actually work? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-a">
+                            <p>Our Voice AI Agent operates in 4 phases: <strong>1. Outbound Dial</strong> — the agent
+                                initiates calls from your number list using Twilio/VAPI. <strong>2. Natural
+                                    Conversation</strong> — powered by real-time STT (speech-to-text) + GPT-4o, it
+                                speaks naturally, handles objections, and qualifies leads using your custom script.
+                                <strong>3. Appointment Booking</strong> — confirmed slots are written directly to Google
+                                Calendar / Calendly and a confirmation SMS is sent to the prospect. <strong>4.
+                                    Follow-Up</strong> — personalized follow-up emails are triggered automatically
+                                post-call. Everything runs 24/7 without human intervention. Average handling time: under
+                                3 minutes per call.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-q">What is ContentForge AI and how does it post to multiple platforms? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-a">
+                            <p>ContentForge AI is our multimodal content engine. You simply <strong>upload a photo or
+                                    video</strong> and provide a short hint about the topic. The AI then: analyzes the
+                                media with vision models, generates an optimized <strong>title, description, hashtags,
+                                    and alt-text</strong> for each platform's algorithm, and then cross-posts to
+                                <strong>YouTube, Instagram, Facebook, Twitter/X, and LinkedIn</strong> simultaneously
+                                via their official APIs. It drastically reduces content production time from hours to
+                                minutes. It's available as a standalone SaaS product or as an add-on to any custom AI
+                                deployment.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item reveal">
+                        <div class="faq-q">Can I see a live demo before committing to a project? <i
+                                class="fa-solid fa-chevron-down"></i></div>
+                        <div class="faq-a">
+                            <p>Absolutely. We offer a <strong>free 30-minute strategy call</strong> where we: (1)
+                                identify your highest-ROI AI use case, (2) show a live demo of the most relevant system
+                                (Voice Agent making a real call, RAG bot answering questions from a sample set of your
+                                documents, or ContentForge generating content from a sample video), and (3) provide a
+                                no-commitment technical blueprint and cost estimate. Click <strong>"Schedule Strategy
+                                    Call"</strong> at the top of the page — typically we can schedule within 48 hours.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════ CTA BANNER ════════════════════════════ -->
+        <section class="cta-banner" aria-label="Call to Action">
+            <div class="container text-center">
+                <div class="section-label reveal" style="margin-bottom:1.5rem">Ready to Start?</div>
+                <h2 class="reveal delay-1">Let's Build Your AI System <span class="gradient-text">Today</span></h2>
+                <p class="reveal delay-2" style="margin:1rem auto 2.5rem">Schedule a free 30-minute strategy call —
+                    we'll map out exactly which AI systems will give you the highest ROI.</p>
+                <div class="cta-actions reveal delay-2">
+                    <a href="book-demo.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-calendar-check"></i>
+                        Book Free Strategy Call</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-cta" id="floating-cta" style="bottom:5rem">
+        <a href="book-demo.html" class="btn btn-primary">
+            <i class="fa-solid fa-calendar-check"></i> Book Demo
+        </a>
+    </div>
+
+    <script src="nav.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Typewriter
+        const phrases = ['Intelligent AI Systems', 'Production-Grade AI Agents', 'RAG-Powered Knowledge Bases', 'Voice AI Calling Agents', 'Workflow Automation Platforms'];
+        let pi = 0, ci = 0, del = false, paused = false;
+        const el = document.getElementById('typewriter-text');
+        const tick = () => {
+            if (paused) return;
+            const p = phrases[pi];
+            if (!del) { el.textContent = p.slice(0, ++ci); if (ci === p.length) { paused = true; setTimeout(() => { del = true; paused = false; tick(); }, 2200); return; } setTimeout(tick, 58); }
+            else { el.textContent = p.slice(0, --ci); if (ci === 0) { del = false; pi = (pi + 1) % phrases.length; } setTimeout(tick, 28); }
+        };
+        setTimeout(tick, 700);
+        // Chart
+        const bars = document.querySelectorAll('.c-bar');
+        setInterval(() => { bars.forEach((b, i) => { b.classList.remove('active'); const s = i === bars.length - 2; b.style.height = s ? '95%' : `${Math.floor(Math.random() * 45) + 50}%`; if (s) b.classList.add('active'); }); }, 2800);
+        // Floating CTA
+        const cta = document.getElementById('floating-cta');
+        window.addEventListener('scroll', () => cta.classList.toggle('show', window.scrollY > 500), { passive: true });
+    </script>
+</body>
+
+</html>

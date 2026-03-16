@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Solutions | QuantumAI — Voice AI Agent, RAG Systems, Workflow Automation</title>
+    <meta name="description"
+        content="Explore QuantumAI's AI solutions: Internal AI Assistants, AI Calling Agent (automated outbound calls + appointment booking), AI Agents & Workflow Automation, Conversational Systems, and Custom ML Engineering." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .page-hero {
+            padding: calc(var(--nav-h) + 5rem) 0 4rem;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .page-hero p {
+            color: var(--text-2);
+            max-width: 620px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Voice Agent Highlight */
+        .voice-agent-section {
+            background: linear-gradient(135deg, rgba(14, 165, 233, .06) 0%, rgba(168, 85, 247, .04) 100%);
+            border: 1px solid rgba(14, 165, 233, .15);
+            border-radius: 20px;
+            padding: 3.5rem;
+            margin-top: 1rem;
+        }
+
+        @media(max-width:768px) {
+            .voice-agent-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        .voice-agent-header {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .voice-icon-big {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #0EA5E9, #A855F7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(14, 165, 233, .4);
+            flex-shrink: 0;
+        }
+
+        .voice-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .voice-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .3rem .9rem;
+            background: rgba(74, 222, 128, .12);
+            border: 1px solid rgba(74, 222, 128, .3);
+            border-radius: 999px;
+            font-size: .75rem;
+            color: #4ade80;
+            font-weight: 600;
+            font-family: var(--font-mono);
+        }
+
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .flow-step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(14, 165, 233, .05);
+            border: 1px solid rgba(14, 165, 233, .12);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .flow-step-num {
+            font-family: var(--font-mono);
+            font-size: .7rem;
+            color: var(--blue);
+            margin-bottom: .5rem;
+            letter-spacing: .1em;
+        }
+
+        .flow-step-icon {
+            font-size: 1.5rem;
+            margin-bottom: .5rem;
+            color: var(--blue);
+        }
+
+        .flow-step h5 {
+            font-size: .9rem;
+            font-weight: 700;
+            margin-bottom: .25rem;
+        }
+
+        .flow-step p {
+            font-size: .8rem;
+            color: var(--text-3);
+        }
+
+        .flow-arrow {
+            position: absolute;
+            right: -12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--blue);
+            font-size: .8rem;
+            z-index: 1;
+        }
+
+        @media(max-width:600px) {
+            .flow-arrow {
+                display: none;
+            }
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media(max-width:700px) {
+            .use-cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .use-case {
+            padding: 1rem 1.25rem;
+            background: rgba(168, 85, 247, .05);
+            border: 1px solid rgba(168, 85, 247, .12);
+            border-radius: 10px;
+        }
+
+        .use-case i {
+            color: #A855F7;
+            margin-right: .5rem;
+        }
+
+        .use-case-name {
+            font-size: .875rem;
+            font-weight: 600;
+        }
+
+        .sol-big-card {
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .sol-big-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: .75rem;
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .sol-big-card .features-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: .5rem .75rem;
+            margin-top: 1rem;
+        }
+
+        @media(max-width:600px) {
+            .sol-big-card .features-2col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sol-big-card .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .5rem;
+            font-size: .875rem;
+            color: var(--text-2);
+        }
+
+        .sol-big-card .feature-item i {
+            color: #4ade80;
+            font-size: .75rem;
+            margin-top: .25rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body data-page="solutions">
+    <canvas id="bg-canvas"></canvas>
+    <main>
+
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="section-label reveal">What We Build</div>
+                <h1 class="reveal delay-1">Production-Grade <span class="gradient-text">AI Solutions</span></h1>
+                <p class="reveal delay-2">From autonomous phone-calling agents to RAG-powered knowledge systems — real
+                    AI, real deployments, real impact.</p>
+            </div>
+        </section>
+
+        <!-- ═══════════════ VOICE AI CALLING AGENT (FLAGSHIP) ══════════ -->
+        <section id="voice-agent" class="section" aria-labelledby="voice-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label" style="color:#0EA5E9">⭐ Featured Product</div>
+                    <h2 class="section-title" id="voice-heading">Voice AI <span class="gradient-text">Calling
+                            Agent</span></h2>
+                    <p class="section-sub">The AI that calls your leads — books appointments — sends follow-up emails.
+                        All automatically, at scale.</p>
+                </div>
+
+                <div class="voice-agent-section reveal">
+                    <div class="voice-agent-header">
+                        <div class="voice-icon-big"><i class="fa-solid fa-phone-volume"></i></div>
+                        <div>
+                            <div class="voice-badge"><i class="fa-solid fa-circle fa-xs pulse-dot"></i> Battle-tested in
+                                production at Telepathy Infotech</div>
+                            <div class="voice-title" style="margin-top:.5rem">Autonomous AI Calling Agent</div>
+                            <p style="font-size:.9rem;color:var(--text-2);margin-top:.25rem">Battle-tested for
+                                real-estate lead conversion — now available for any customer-facing industry.</p>
+                        </div>
+                    </div>
+
+                    <!-- Flow -->
+                    <h4
+                        style="margin-bottom:1rem;font-size:.85rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.1em">
+                        📞 How it works</h4>
+                    <div class="flow-steps">
+                        <div class="flow-step">
+                            <div class="flow-step-num">STEP 01</div>
+                            <div class="flow-step-icon"><i class="fa-solid fa-list"></i></div>
+                            <h5>Lead Ingested</h5>
+                            <p>New lead enters from CRM, form, or API</p>
+                            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">STEP 02</div>
+                            <div class="flow-step-icon"><i class="fa-solid fa-phone"></i></div>
+                            <h5>Auto Outbound Call</h5>
+                            <p>AI agent calls the lead at optimal time</p>
+                            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">STEP 03</div>
+                            <div class="flow-step-icon"><i class="fa-solid fa-comments"></i></div>
+                            <h5>Voice Conversation</h5>
+                            <p>Natural AI voice interaction — qualifies, answers, engages</p>
+                            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">STEP 04</div>
+                            <div class="flow-step-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                            <h5>Books Appointment</h5>
+                            <p>Schedules meeting automatically in calendar</p>
+                            <div class="flow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                        <div class="flow-step">
+                            <div class="flow-step-num">STEP 05</div>
+                            <div class="flow-step-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <h5>Email Follow-Up</h5>
+                            <p>Sends personalized confirmation & follow-up email automatically</p>
+                        </div>
+                    </div>
+
+                    <!-- Use cases -->
+                    <h4
+                        style="margin:2rem 0 1rem;font-size:.85rem;color:var(--text-3);text-transform:uppercase;letter-spacing:.1em">
+                        Industries / Use Cases</h4>
+                    <div class="use-cases-grid">
+                        <div class="use-case"><i class="fa-solid fa-building"></i><span class="use-case-name">Real
+                                Estate Lead Conversion</span></div>
+                        <div class="use-case"><i class="fa-solid fa-hospital"></i><span class="use-case-name">Healthcare
+                                Appointment Booking</span></div>
+                        <div class="use-case"><i class="fa-solid fa-chart-line"></i><span class="use-case-name">Sales
+                                Pipeline Qualification</span></div>
+                        <div class="use-case"><i class="fa-solid fa-graduation-cap"></i><span
+                                class="use-case-name">EdTech Student Enrollment</span></div>
+                        <div class="use-case"><i class="fa-solid fa-landmark"></i><span class="use-case-name">Financial
+                                Services Outreach</span></div>
+                        <div class="use-case"><i class="fa-solid fa-headset"></i><span class="use-case-name">Customer
+                                Re-engagement</span></div>
+                    </div>
+
+                    <!-- Tech Stack -->
+                    <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.6rem;align-items:center">
+                        <span style="font-size:.8rem;color:var(--text-3);margin-right:.5rem">Powered by:</span>
+                        <span class="tech-pill">OpenAI GPT-4</span>
+                        <span class="tech-pill">LangGraph Agents</span>
+                        <span class="tech-pill">VAPI / Twilio</span>
+                        <span class="tech-pill">n8n Workflows</span>
+                        <span class="tech-pill">Gmail API</span>
+                        <span class="tech-pill">Calendar API</span>
+                    </div>
+
+                    <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
+                        <a href="book-demo.html" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Request a
+                            Demo Call</a>
+                        <a href="contact.html" class="btn btn-ghost">Discuss Implementation <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════ ALL SOLUTIONS ══════════════════════ -->
+        <section class="section bg-dark2" aria-labelledby="all-solutions-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <div class="section-label">Full Portfolio</div>
+                    <h2 class="section-title" id="all-solutions-heading">All <span class="gradient-text">AI
+                            Solutions</span></h2>
+                </div>
+
+                <div class="sol-big-card glass-card hover-glow reveal">
+                    <h3>
+                        <div class="sol-icon-wrap"
+                            style="--clr:#6366f1;display:inline-flex;width:40px;height:40px;font-size:1rem"><i
+                                class="fa-solid fa-user-shield"></i></div> Internal AI Assistants
+                    </h3>
+                    <p>Secure, enterprise-grade AI assistants trained exclusively on your company's internal data,
+                        policies, and SOPs. Employees get instant, accurate answers from your knowledge base — no more
+                        digging through documents.</p>
+                    <div class="features-2col">
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>RAG-powered knowledge
+                            retrieval</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Document ingestion pipelines
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Policy & SOP intelligence
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>HR & operations assistant
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Role-based access control
+                            (RBAC)</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>On-premise or cloud deployment
+                        </div>
+                    </div>
+                    <div style="margin-top:1.25rem"><span class="ideal-chip">Ideal for: Knowledge-centric
+                            Enterprises</span></div>
+                </div>
+
+                <div class="sol-big-card glass-card hover-glow reveal">
+                    <h3>
+                        <div class="sol-icon-wrap"
+                            style="--clr:#8b5cf6;display:inline-flex;width:40px;height:40px;font-size:1rem"><i
+                                class="fa-solid fa-robot"></i></div> AI Agents & Workflow Automation
+                    </h3>
+                    <p>Autonomous AI systems that execute tasks, integrate with your APIs, and automate complex
+                        multi-step workflows — running 24/7 without human intervention.</p>
+                    <div class="features-2col">
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Sales automation agents</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Customer support agents</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>HR workflow automation</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>CRM-integrated AI assistants
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Email & task automation (n8n)
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Multi-agent architectures
+                            (LangGraph)</div>
+                    </div>
+                    <div style="margin-top:1.25rem"><span class="ideal-chip">Ideal for: Operations-heavy Teams</span>
+                    </div>
+                </div>
+
+                <div class="sol-big-card glass-card hover-glow reveal">
+                    <h3>
+                        <div class="sol-icon-wrap"
+                            style="--clr:#ec4899;display:inline-flex;width:40px;height:40px;font-size:1rem"><i
+                                class="fa-regular fa-comments"></i></div> Intelligent Conversational Systems
+                    </h3>
+                    <p>Advanced LLM-powered communication systems integrated natively into your business stack and user
+                        channels. From WhatsApp bots to embedded website assistants.</p>
+                    <div class="features-2col">
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Website AI chat assistants
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>WhatsApp AI bots</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Lead qualification bots</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>ERP/CRM-connected chat</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Multi-language AI support
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Sentiment-aware responses
+                        </div>
+                    </div>
+                    <div style="margin-top:1.25rem"><span class="ideal-chip">Ideal for: Customer-facing
+                            Businesses</span></div>
+                </div>
+
+                <div class="sol-big-card glass-card hover-glow reveal">
+                    <h3>
+                        <div class="sol-icon-wrap"
+                            style="--clr:#ec4899;display:inline-flex;width:40px;height:40px;font-size:1rem"><i
+                                class="fa-solid fa-wand-magic-sparkles"></i></div> ContentForge AI — Social Media Engine
+                    </h3>
+                    <p>AI-powered content creation platform. Upload a photo or video with a hint — our AI generates
+                        optimized titles, captions, descriptions, and hashtags for every social platform, then publishes
+                        everywhere in one click.</p>
+                    <div class="features-2col">
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Upload photo/video + title
+                            hint</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>AI-generated platform-specific
+                            titles</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Auto captions, hashtags &
+                            descriptions</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>One-click publish: YT, FB, IG,
+                            X, LinkedIn</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Smart scheduling for peak
+                            engagement</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Brand voice consistency
+                            across platforms</div>
+                    </div>
+                    <div style="margin-top:1.25rem"><span class="ideal-chip">Ideal for: Marketing Teams &
+                            Creators</span></div>
+                </div>
+
+                <div class="sol-big-card glass-card hover-glow reveal">
+                    <h3>
+                        <div class="sol-icon-wrap"
+                            style="--clr:#06b6d4;display:inline-flex;width:40px;height:40px;font-size:1rem"><i
+                                class="fa-solid fa-chart-line"></i></div> Custom AI & ML Engineering
+                    </h3>
+                    <p>End-to-end AI solution development — from proof-of-concept to full production rollout — tailored
+                        to unique business objectives with measurable accuracy targets.</p>
+                    <div class="features-2col">
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Predictive analytics systems
+                        </div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Risk scoring models (92%+
+                            acc.)</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Recommendation engines</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Fine-tuned LLM systems</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Data-driven dashboards</div>
+                        <div class="feature-item"><i class="fa-solid fa-check-circle"></i>Scalable AI microservices
+                        </div>
+                    </div>
+                    <div style="margin-top:1.25rem"><span class="ideal-chip">Ideal for: Data-Driven Enterprises</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-banner">
+            <div class="container text-center">
+                <h2 class="reveal">Which Solution Fits You?</h2>
+                <p class="reveal delay-1" style="margin:1rem auto 2rem">Book a free call — we'll identify the
+                    highest-ROI AI solution for your business in 30 minutes.</p>
+                <div class="cta-actions reveal delay-2">
+                    <a href="book-demo.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-phone"></i> Get a Free
+                        AI Audit</a>
+                    <a href="contact.html" class="btn btn-outline btn-lg">Ask a Question</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-cta" id="floating-cta">
+        <a href="book-demo.html" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book Demo</a>
+    </div>
+    <script src="nav.js"></script>
+    <script>
+        const cta = document.getElementById('floating-cta');
+        window.addEventListener('scroll', () => cta.classList.toggle('show', window.scrollY > 400), { passive: true });
+    </script>
+</body>
+
+</html>

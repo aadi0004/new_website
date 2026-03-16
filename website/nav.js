@@ -6,6 +6,12 @@
 var $ = s => document.querySelector(s);
 var $$ = s => [...document.querySelectorAll(s)];
 
+// Auto-detect environment: use /api in production (same Vercel domain), localhost:5000 in dev
+window.BACKEND_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'http://localhost:5000'
+  : '';
+
+
 const NAV_LINKS = [
   { href: 'index.html', label: 'Home', key: 'home' },
   { href: 'about.html', label: 'About', key: 'about' },

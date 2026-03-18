@@ -302,8 +302,9 @@ function validate(form, fb) {
 async function submitForm(formEl, btnEl, fbEl, endpoint) {
   if (!validate(formEl, fbEl)) return;
   setLoading(btnEl, true);
+  const base = window.BACKEND_URL || '';
   try {
-    const res = await fetch(`http://localhost:5000/api/${endpoint}`, {
+    const res = await fetch(`${base}/api/${endpoint}`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(Object.fromEntries(new FormData(formEl)))
     });
@@ -311,11 +312,12 @@ async function submitForm(formEl, btnEl, fbEl, endpoint) {
     showFB(fbEl, data.message, data.success ? 'success' : 'error');
     if (data.success) formEl.reset();
   } catch {
-    showFB(fbEl, '⚠️ Server offline. Please try again later.', 'error');
+    showFB(fbEl, '⚠️ Server offline. Please try again later or email info@quantumai.in', 'error');
   } finally {
     setLoading(btnEl, false);
   }
 }
+
 
 /* ── Inject AI Widget (OmniDim-inspired floating button) ──── */
 function injectAIWidget() {
@@ -324,6 +326,35 @@ function injectAIWidget() {
   widget.href = 'contact.html';
   widget.innerHTML = '<i class="fa-solid fa-robot"></i> <span>Ask QuantumAI</span>';
   document.body.appendChild(widget);
+}
+
+/* ── FAQ Accordion ────────────────────────────────────────── */
+function initFAQ() {
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item.active').forEach(el => el.classList.remove('active'));
+      if (!wasActive) item.classList.add('active');
+    });
+  });
+}
+
+/* ── Announcement Bar ─────────────────────────────────────── */
+function initAnnounce() {
+  const bar = document.getElementById('announce-bar');
+  const btn = document.getElementById('announce-close');
+  if (!bar || !btn) return;
+  if (sessionStorage.getItem('announce-dismissed')) {
+    bar.classList.add('hidden');
+    document.body.classList.remove('has-announce');
+    return;
+  }
+  btn.addEventListener('click', () => {
+    bar.classList.add('hidden');
+    document.body.classList.remove('has-announce');
+    sessionStorage.setItem('announce-dismissed', '1');
+  });
 }
 
 /* ── Boot ─────────────────────────────────────────────────── */
@@ -338,4 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCounters();
   initParticles();
   setFooterYear();
+  initFAQ();
+  initAnnounce();
 });

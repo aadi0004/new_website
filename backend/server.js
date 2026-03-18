@@ -6,15 +6,18 @@ const { connectDB, Lead, DemoRequest, Newsletter, Appointment } = require('./db'
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// CORS — allow production domain + localhost in dev
+// CORS — allow all origins by default (set ALLOWED_ORIGINS env var to restrict in production)
 const allowedOrigins = process.env.ALLOWED_ORIGINS
-    ? process.env.ALLOWED_ORIGINS.split(',')
-    : ['http://localhost:8081', 'http://localhost:8082', 'http://localhost:3000'];
+    ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim())
+    : null; // null = allow all
 
 app.use(cors({
     origin: (origin, cb) => {
-        // Allow requests with no origin (mobile apps, curl) or whitelisted origins
-        if (!origin || allowedOrigins.includes(origin)) return cb(null, true);
+        // If no restrictions set, allow everything
+        if (!allowedOrigins) return cb(null, true);
+        // Allow requests with no origin (server-to-server, curl, mobile)
+        if (!origin) return cb(null, true);
+        if (allowedOrigins.includes(origin)) return cb(null, true);
         cb(new Error('Not allowed by CORS'));
     },
     credentials: true
